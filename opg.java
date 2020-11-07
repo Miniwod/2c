@@ -35,7 +35,7 @@ public class opg {
         }
         else if(a=='('){
             if(b==')') return 2;
-            else if(b=='#') return 1;
+            else if(b=='#') return 0;
             else return -1;
         }
         else if(a==')'){
@@ -168,6 +168,7 @@ public class opg {
             }
             if(stack[top]=='N') t=stack[top-1];
             if(t=='#' && now=='#') break;
+            //System.out.println(t+","+now);
             result=check(t,now);
             //System.out.println(stack[top]+" "+now);
             if(result==0){
@@ -176,16 +177,17 @@ public class opg {
             }
             else if(result==1){
                 flag=guiyue();
-                //print();
                 if(flag==0){
                     System.out.println("RE");
                     return;
                 }
                 else if(flag==1){
+//                    print();
                     return;
                 }
                 else if(flag==2){
                     System.out.println("R");
+//                    print();
                 }
             }
             else if(result==-1){
